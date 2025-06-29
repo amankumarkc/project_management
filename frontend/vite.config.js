@@ -14,6 +14,9 @@ export default defineConfig({
   server: {
     hmr: {
       overlay: false
+    },
+    sourcemapIgnoreList(sourcePath, sourcemapPath) {
+      return sourcePath.includes('node_modules')
     }
   },
   build: {
